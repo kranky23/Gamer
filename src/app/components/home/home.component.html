@@ -1,0 +1,76 @@
+<section class="wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center page-title">Newly Releasing Games!</h1>
+            </div>
+        </div>
+
+
+        <div class="container text-center">
+            <button type="button" class="btn btn-dark" style="margin-bottom: 25px;"
+                (click)="getNewReleasedGames()">Check out the newly released games</button>
+        </div>
+        <!-- <span *ngIf="released">
+            <h1>{{newReleases[0].data.name}} ) </h1>
+        </span> -->
+        <div class="row">
+            <div class="col-md-3" *ngFor="let newRelease of newReleases">
+                <div class="product-container" *ngIf="released">
+                    <!-- <div class="tag-sale">
+
+                    </div> -->
+                    <div class="product-image">
+                        <span class="hover-link"></span>
+                        <button (click)="getGameDetails(newRelease.data.steam_appid)" target="_blank" class="product-link">view details</button>
+                        <img class="img-responsive" src="{{newRelease.data.header_image}}" alt="">
+                    </div>
+                    <div class="product-description">
+                        <div class="product-label">
+                            <div class="product-name">
+                                <h1>{{newRelease.data.name}}</h1>
+                                <!-- <p class="price"></p> -->
+                                <p>Release Date : {{newRelease.data.release_date.date}}</p>
+                            </div>
+                        </div>
+                        <!-- <div class="product-option">
+                                <div class="product-size">
+                                    <h3>Sizes</h3>
+                                    <p>XS,S,M,L,XL,XXL</p>
+                                </div>
+                                <div class="product-color">
+                                    <h3>Colors</h3>
+                                    <ul>
+                                        <li class="red"></li>
+                                        <li class="blue"></li>
+                                        <li class="green"></li>
+                                        <li class="gray"></li>
+                                        <li class="black"></li>
+                                        <li class="dark-blue"></li>
+                                    </ul>
+                                </div>
+
+                            </div> -->
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+</section>

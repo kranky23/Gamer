@@ -1,0 +1,92 @@
+<section class = "wrapper">
+    <nav class="flex-nav">
+        <div class="container">
+        <div class="grid menu">
+            <div class="column-xs-4 column-md-6">
+            <a href="#" class="toggle-nav">Menu <i class="ion-navicon-round"></i></a>
+            <ul>
+                <li class="nav-item"><a href="#">Products</a></li>
+            </ul>
+            </div>
+        </div>
+        </div>
+    </nav>
+    <main>
+    <div class="container">
+       
+        <div class="grid product">
+            <div class="column-xs-12 column-md-7">
+                <div class="product-gallery">
+                    <div class="product-image" >
+                    <img class="active" src="{{header_image}}">
+                    </div>
+                    <ul class="image-list">
+                    <!-- <li class="image-item"><img src="https://source.unsplash.com/W1yjvf5idqA"></li>
+                    <li class="image-item"><img src="https://source.unsplash.com/VgbUxvW3gS4"></li>
+                    <li class="image-item"><img src="https://source.unsplash.com/5WbYFH0kf_8"></li> -->
+                    </ul>
+                </div>
+                <div class = "gamedetails">
+                    <h2>About {{name}}</h2>
+                    <div [innerHTML]="detailed_description"></div>
+                    <hr>
+                    <h2>PC Requirements</h2>
+                    <br>
+                    <div [innerHTML]="minimum_pc_requirements"></div>
+                    <div [innerHTML]="recommended_pc_requirements"></div>
+                    <hr>
+                </div>
+                <h2>Screenshots</h2><br>
+                <span class = "screenshots" *ngFor="let screenshot of screenshots">
+                    <!-- <ul class="image-list"> -->
+                        <p class="image-item"><img src={{screenshot.path_thumbnail}}></p>
+                        <!-- <li class="image-item"><img src="https://source.unsplash.com/VgbUxvW3gS4"></li>
+                        <li class="image-item"><img src="https://source.unsplash.com/5WbYFH0kf_8"></li> -->
+                    <!-- </ul> -->
+                </span>
+            </div>
+            
+            <div class="column-xs-12 column-md-5">
+            <h1>{{name}}</h1>
+            <span class = "genres">
+                <h6 *ngFor="let genre of genres">{{genre.description}}</h6>
+            </span>
+            <div class="description">
+                
+                <!-- {{detailed_description}} -->
+                <p [innerHTML]="short_description"></p>
+                <!-- <p>By contrast with other plant cultivation practices, bonsai is not intended for production of food or for medicine. Instead, bonsai practice focuses on long-term cultivation and shaping of one or more small trees growing in a container.</p> -->
+            </div>
+            <!-- <button class="add-to-cart">Add To Cart</button> -->
+            </div>
+        </div>
+        <div class="grid related-products">
+            <div class="column-xs-12">
+            <h3>You may also like</h3>
+            </div>
+            <div class="column-xs-12 column-md-4">
+            <img src="https://source.unsplash.com/miziNqvJx5M">
+            <h4>Succulent</h4>
+            <p class="price">$19.99</p>
+            </div>
+            <div class="column-xs-12 column-md-4">
+            <img src="https://source.unsplash.com/2y6s0qKdGZg">
+            <h4>Terranium</h4>
+            <p class="price">$19.99</p>
+            </div>
+            <div class="column-xs-12 column-md-4">
+            <img src="https://source.unsplash.com/6Rs76hNbIWE">
+            <h4>Cactus</h4>
+            <p class="price">$19.99</p>
+            </div>
+        </div>
+        </div>
+    </main>
+    <footer>
+        <div class="grid">
+        <div class="column-xs-12">
+            <p class="copyright">&copy; Copyright 2018 <a href="https://katherinekato.com" title="Katherine Kato"  target="_blank">Katherine Kato</a></p>
+        </div>
+        </div>
+    </footer>
+</section>
