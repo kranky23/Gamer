@@ -1,0 +1,85 @@
+<app-navbar></app-navbar>
+<section class="wrapper">
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center" >
+      <!-- <li class="page-item"><button class="page-link" >{{letter}}</button></li> -->
+      <li class="page-item"><button  type="button" class="page-link" value="{{letters[0]}}" (click)="getAlphabetGames(letters[0])">A</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{letters[1]}}" (click)="getAlphabetGames(letters[1])">B</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{letters[2]}}" (click)="getAlphabetGames(letters[2])">C</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{letters[3]}}" (click)="getAlphabetGames(letters[3])">D</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{letters[4]}}" (click)="getAlphabetGames(letters[4])">E</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{letters[5]}}" (click)="getAlphabetGames(letters[5])">F</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{letters[6]}}" (click)="getAlphabetGames(letters[6])">G</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{letters[7]}}" (click)="getAlphabetGames(letters[7])">H</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{letters[8]}}" (click)="getAlphabetGames(letters[8])">I</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{letters[9]}}" (click)="getAlphabetGames(letters[9])">J</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{letters[10]}}" (click)="getAlphabetGames(letters[10])">K</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{letters[11]}}" (click)="getAlphabetGames(letters[11])">L</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{letters[12]}}" (click)="getAlphabetGames(letters[12])">M</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{letters[13]}}" (click)="getAlphabetGames(letters[13])">N</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{letters[14]}}" (click)="getAlphabetGames(letters[14])">O</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{letters[15]}}" (click)="getAlphabetGames(letters[15])">P</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{letters[16]}}" (click)="getAlphabetGames(letters[16])">Q</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{letters[17]}}" (click)="getAlphabetGames(letters[17])">R</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{letters[18]}}" (click)="getAlphabetGames(letters[18])">S</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{letters[19]}}" (click)="getAlphabetGames(letters[19])">T</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{letters[20]}}" (click)="getAlphabetGames(letters[20])">U</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{letters[21]}}" (click)="getAlphabetGames(letters[21])">V</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{letters[22]}}" (click)="getAlphabetGames(letters[22])">W</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{letters[23]}}" (click)="getAlphabetGames(letters[23])">X</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{letters[24]}}" (click)="getAlphabetGames(letters[24])">Y</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{letters[25]}}" (click)="getAlphabetGames(letters[25])">Z</button></li>
+      
+    
+    </ul>
+    <ul class="pagination justify-content-center" >
+      <li class="page-item"><button  type="button" class="page-link" value="{{genres[0]}}" (click)="getGamesByGenre(genres[0])">{{genres[0]}}</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{genres[1]}}" (click)="getGamesByGenre(genres[1])">{{genres[1]}}</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{genres[2]}}" (click)="getGamesByGenre(genres[2])">{{genres[2]}}</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{genres[3]}}" (click)="getGamesByGenre(genres[3])">{{genres[3]}}</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{genres[4]}}" (click)="getGamesByGenre(genres[4])">{{genres[4]}}</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{genres[5]}}" (click)="getGamesByGenre(genres[5])">{{genres[5]}}</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{genres[6]}}" (click)="getGamesByGenre(genres[6])">{{genres[6]}}</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{genres[7]}}" (click)="getGamesByGenre(genres[7])">{{genres[7]}}</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{genres[8]}}" (click)="getGamesByGenre(genres[8])">{{genres[8]}}</button></li>
+      <li class="page-item"><button  type="button" class="page-link" value="{{genres[9]}}" (click)="getGamesByGenre(genres[9])">{{genres[9]}}</button></li>
+    
+    </ul>
+  </nav>
+  <nav class="navbar">
+    <input class="form-control" type="text" name="game" [(ngModel)]="game" (ngModelChange)="search()"
+    placeholder="Search for a game">
+  </nav>
+  
+  <h1>List of Games</h1>
+  <div class="rwd-table">
+    <!-- <button type="button" (click)="getGameDetails()" *ngIf = "loaded">{{appIds[1]}} hello yo</button> -->
+    <tr>
+      <th>Movie Title</th>
+      <th>Genre</th>
+      <th>Year</th>
+      <th>Gross</th>
+    </tr>
+    <div *ngIf="alphabetLoaded">
+      <tr *ngFor="let app of alphabetGames">
+        <td data-th="Movie Title">
+          <a type="button" (click)="getGameDetails(app)" >{{app}}</a>
+        </td>
+        <td data-th="Genre"><a href="#">Adventure, Sci-fi </a></td>
+        <td data-th="Year">1977</td>
+        <td data-th="Gross">$460,935,665</td>
+      </tr>
+    </div>
+    <div *ngIf="genreLoaded">
+      <tr *ngFor="let game of genreGames">
+        <td data-th="Movie Title">
+          <a type="button" (click)="getGameDetails(game)">{{game}}</a>
+        </td>
+        <td data-th="Genre"><a href="#">Adventure, Sci-fi </a></td>
+        <td data-th="Year">1977</td>
+        <td data-th="Gross">$460,935,665</td>
+      </tr>
+    </div>
+  </div>
+
+</section>

@@ -35,6 +35,15 @@ export class GetAppListService {
       },})
   }
 
+
+  public getMyGameDetailsByGenre(genre:String)
+  {
+    return this.http.get(`${this.baseUrl}/games/genre/${genre}`,{
+      headers: {
+          'Content-Type': 'application/json'
+      },})
+  }
+
 }
 
 

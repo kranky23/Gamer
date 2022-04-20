@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GetAppListService } from 'src/app/get-app-list.service';
+import { GetAppListService } from 'src/app/services/get-app-list.service';
 
 @Component({
   selector: 'app-product-page',
@@ -26,7 +26,11 @@ export class ProductPageComponent implements OnInit {
     const appid:number = JSON.parse(localStorage.getItem("appid")!);
     this.getAppListService.getGameDetails(appid).subscribe(
       (data:any) => {
-
+        if(data[appid].success==false)
+        {
+          alert("Invalid Game details! try another game!");
+          window.close();
+        }
         console.log('THe obtained game details are  ',data[appid].data.detailed_description)
 
         this.detailed_description = data[appid].data.detailed_description;

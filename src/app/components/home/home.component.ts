@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GetAppListService } from 'src/app/get-app-list.service';
+import { GetAppListService } from 'src/app/services/get-app-list.service';
 
 @Component({
   selector: 'app-home',

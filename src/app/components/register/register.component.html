@@ -1,0 +1,36 @@
+<html class="background">
+    <div class="login-box">
+      <!-- <pre>{{ gamer | json }}</pre> --> -->
+        <h2>Register</h2>
+        <form #gamerSignUp="ngForm"  (ngSubmit)="onSubmit(gamerSignUp)">
+          <div class="user-box">
+            <input type="text" name="username" required="" [(ngModel)]="gamer.username">
+            <label>Username</label>
+          </div>
+          <div class="user-box">
+            <input type="text" name="email" required="" [(ngModel)]="gamer.email">
+            <label>Email</label>
+          </div>
+              <div class="user-box">
+            <input type="password" name="password" required="" [(ngModel)]="gamer.password">
+            <label>Password</label>
+          </div>
+          <div class="user-box">
+            <input type="password" name="repassword" required="" [(ngModel)]="gamer.repassword">
+            <label>Re-enter password</label>
+          </div>
+          
+          <button type="button ">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Submit
+          </button>
+        </form>
+      </div>
+
+
+
+
+</html>

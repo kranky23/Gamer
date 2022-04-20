@@ -1,0 +1,33 @@
+
+<html class="background">
+    <div class="login-box">
+        <h2>Login</h2>
+        <form #gamerSignUp="ngForm"  (ngSubmit)="onSubmit(gamerSignUp)">
+          <div class="user-box">
+            <input type="text" name="email" required="" [(ngModel)]="gamer.email">
+            <label>Email</label>
+          </div>
+              <div class="user-box">
+            <input type="password" name="password" required="" [(ngModel)]="gamer.password">
+            <label>Password</label>
+          </div>
+
+          <div class="switch-field">
+            <input checked type="radio" id="radio-one" [(ngModel)]="gamer.role" name="switch-one" value="gamer" />
+            <label for="radio-one">Gamer</label>
+            <input type="radio" id="radio-two" name="switch-one" value="admin" [(ngModel)]="gamer.role"/>
+            <label for="radio-two">Admin</label>
+          </div>
+          
+          <button type="button ">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Submit
+          </button>
+        </form>
+      </div>
+
+
+</html>

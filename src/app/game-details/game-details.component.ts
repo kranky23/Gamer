@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { waitForAsync } from '@angular/core/testing';
-import { GetAppListService } from '../get-app-list.service';
+import { GetAppListService } from '../services/get-app-list.service';
 
 @Component({
   selector: 'app-game-details',
@@ -11,6 +11,7 @@ export class GameDetailsComponent implements OnInit {
 
   constructor(private getAppListService : GetAppListService) { }
   appIds:number[] = []
+  appNames:String[] = []
   
   responses:any[] = []
 
@@ -26,7 +27,8 @@ export class GameDetailsComponent implements OnInit {
 
         for(var i=0;i<139715;i++)
         {
-          this.appIds[i] = data[0].applist.apps[i].appid
+          this.appIds[i] = data[0].applist.apps[i].appid;
+          this.appNames[i] = data[0].applist.apps[i].name;
         }
         console.log("length of the appIds is ",this.appIds.length)
         console.log("AppIDs are ",this.appIds)
