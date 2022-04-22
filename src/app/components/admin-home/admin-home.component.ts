@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Gamer } from 'src/app/gamer';
 import { AdminOpsService } from 'src/app/services/admin-ops.service';
+import { RegisterService } from 'src/app/services/register.service';
 
 @Component({
   selector: 'app-admin-home',
@@ -10,7 +11,8 @@ import { AdminOpsService } from 'src/app/services/admin-ops.service';
 })
 export class AdminHomeComponent implements OnInit {
 
-  constructor(private adminOpsService: AdminOpsService) { }
+  constructor(private adminOpsService: AdminOpsService,
+   private registerService : RegisterService) { }
 
   gamers:Gamer[] = []
   dataLoaded = false;
@@ -24,7 +26,7 @@ export class AdminHomeComponent implements OnInit {
     console.log("Gamers are ",data);
     this.gamers = [];
     this.gamers = data;
-
+    console.log("gamers array after copying is ",this.gamers);
     this.dataLoaded = true;
   }
 
@@ -36,10 +38,33 @@ export class AdminHomeComponent implements OnInit {
   }
 
   /*adds the user to the dB by calling the API from the service*/
-  public onAdd(gamerAdd : NgForm)
+  public async onAdd(gamerAdd : NgForm)
   {
     console.log(this.gamer);
+    
+    // if(this.addGamer==)
+    let email = document.getElementById("email");
+
+    for(var i=0;i<this.gamers.length;i++)
+    {
+      if(this.gamers[i].email == this.gamer.email)
+      {
+        alert("email already exists! Try new email ID")
+        return;
+      }
+      if(this.gamers[i].username == this.gamer.username)
+      {
+        alert("Username taken! Try another one");
+        this.gamer.username = "";
+        return;
+      }
+    }
+    
+    const data : any = await this.registerService.enroll(this.gamer).toPromise();
+    
+    alert("New Gamer added!")
     this.addGamer = false;
+    this.ngOnInit();
   }
 
 
@@ -61,6 +86,21 @@ export class AdminHomeComponent implements OnInit {
     // )
     console.log("message obtained after delete uesr is ",res);
     this.ngOnInit();
+  }
+
+  public logOutUser()
+  {
+    localStorage.removeItem("token");
+    localStorage.removeItem("alphabet");
+    localStorage.removeItem("email");
+    localStorage.removeItem("appid");
+    localStorage.removeItem("id");
+    localStorage.removeItem("lname");
+
+    localStorage.removeItem("fname");
+    window.location.href = "login"
+    // this.router.navigate(['']);
+    // location.reload();
   }
   
 

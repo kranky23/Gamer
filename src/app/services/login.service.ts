@@ -7,6 +7,7 @@ import { Gamer } from '../gamer';
   providedIn: 'root'
 })
 export class LoginService {
+    
 
   constructor(private router: Router,private http : HttpClient) { }
 
@@ -39,6 +40,10 @@ export class LoginService {
     {
       return this.http.post(`${this.url}/token`,gamer);
     }
+
+    public getToken() {
+      return localStorage.getItem("token");
+  }
 
 
 }

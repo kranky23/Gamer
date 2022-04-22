@@ -22,11 +22,13 @@ export class AdminOpsService {
 
   public deleteGamer(email:string)
   {
-    return this.http.post<any>(`${this.baseUrl}/deleteGamer/${email}`,{
+    return this.http.delete<any>(`${this.baseUrl}/deleteGamer/${email}`,{
       headers: {
           'Content-Type': 'application/json'
       },})
   }
+
+
 
 
 }

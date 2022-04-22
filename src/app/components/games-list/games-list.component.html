@@ -55,19 +55,14 @@
   <div class="rwd-table">
     <!-- <button type="button" (click)="getGameDetails()" *ngIf = "loaded">{{appIds[1]}} hello yo</button> -->
     <tr>
-      <th>Movie Title</th>
-      <th>Genre</th>
-      <th>Year</th>
-      <th>Gross</th>
+      <th>Game Title</th>
+      <!-- <th>Steam ID</th> -->
     </tr>
     <div *ngIf="alphabetLoaded">
       <tr *ngFor="let app of alphabetGames">
         <td data-th="Movie Title">
           <a type="button" (click)="getGameDetails(app)" >{{app}}</a>
         </td>
-        <td data-th="Genre"><a href="#">Adventure, Sci-fi </a></td>
-        <td data-th="Year">1977</td>
-        <td data-th="Gross">$460,935,665</td>
       </tr>
     </div>
     <div *ngIf="genreLoaded">
@@ -75,9 +70,9 @@
         <td data-th="Movie Title">
           <a type="button" (click)="getGameDetails(game)">{{game}}</a>
         </td>
-        <td data-th="Genre"><a href="#">Adventure, Sci-fi </a></td>
+        <!-- <td data-th="Genre"><a href="#">Adventure, Sci-fi </a></td>
         <td data-th="Year">1977</td>
-        <td data-th="Gross">$460,935,665</td>
+        <td data-th="Gross">$460,935,665</td> -->
       </tr>
     </div>
   </div>

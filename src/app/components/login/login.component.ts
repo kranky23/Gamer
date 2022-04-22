@@ -20,15 +20,16 @@ export class LoginComponent implements OnInit {
   public onSubmit(gamerSignUp : NgForm)
   {
     console.log(this.gamer);
+    localStorage.setItem("email",this.gamer.email);
     if(this.gamer.role=="gamer")
     {
       console.log("gamer login")
       this.loginService.generateToken(this.gamer)
         .subscribe(
           (data: any) => {
-
+            this.loginUser(data.token);
             console.log('Gamer login Success!', data);
-            // window.location.href = "home"
+            window.location.href = "home"
 
           },
           (error: any) => {
@@ -46,8 +47,9 @@ export class LoginComponent implements OnInit {
           (data: any) => {
 
             console.log('Admin login Success!', data);
-            window.location.href = "adminhome"
-
+            this.loginUser(data.token);
+            window.location.href = "adminhome";
+            
           },
           (error: any) => {
             console.log('Error', error), alert("Wrong credentials, try again! ")
@@ -56,5 +58,13 @@ export class LoginComponent implements OnInit {
 
         )
     }
+    
   }
+
+  public loginUser(token : string)
+  {
+    localStorage.setItem("token" ,token);
+    return true;
+  }
+
 }

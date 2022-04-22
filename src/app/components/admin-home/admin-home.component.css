@@ -18,3 +18,8 @@ th {
   .form-inline {
     margin-bottom: 20px;
   }
+
+  .pull-right
+  {
+    margin-right:200px;
+  }

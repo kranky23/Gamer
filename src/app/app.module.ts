@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GameDetailsComponent } from './game-details/game-details.component';
@@ -16,6 +16,9 @@ import { LoginComponent } from './components/login/login.component';
 import { LoadgamesComponent } from './components/loadgames/loadgames.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AdminHomeComponent } from './components/admin-home/admin-home.component';
+import { LoginService } from './services/login.service';
+import { AuthGuard } from './services/auth.guard';
+import { AuthInterceptor } from './services/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,7 @@ import { AdminHomeComponent } from './components/admin-home/admin-home.component
     FormsModule,
     Ng2SearchPipeModule
   ],
-  providers: [],
+  providers: [LoginService, AuthGuard, [{provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor,multi:true}]],
   bootstrap: [AppComponent]
 })
 export class AppModule {

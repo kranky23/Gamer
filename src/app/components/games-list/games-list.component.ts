@@ -73,6 +73,7 @@ export class GamesListComponent implements OnInit {
     let appid:string = "" + this.map.get(app) ;
     console.log("appid of the game clicked is ",appid);
     localStorage.setItem("appid",appid);
+    localStorage.setItem("title",app);
     console.log(appid)
     window.open('product', '_blank');
     // window.location.href = "product"

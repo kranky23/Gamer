@@ -1,3 +1,4 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { GetAppListService } from 'src/app/services/get-app-list.service';
 
@@ -23,6 +24,7 @@ export class HomeComponent implements OnInit {
     // {
     //   this.appIds[i] = res[0].applist.apps[i].appid
     // }
+    
     this.getAppListService.gameList().subscribe(
       (data:any) => {
 

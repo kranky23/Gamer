@@ -9,17 +9,20 @@ import { ProductPageComponent } from './components/product-page/product-page.com
 import { RandomGameComponent } from './components/random-game/random-game.component';
 import { RegisterComponent } from './components/register/register.component';
 import { GameDetailsComponent } from './game-details/game-details.component';
+import { AuthGuard } from './services/auth.guard';
+
+// canActivate: [AuthGuard]
 
 const routes: Routes = [
-  {path: 'home' , component : HomeComponent, pathMatch: "full"},
-  {path: 'product' , component : ProductPageComponent, pathMatch: "full"},
-  {path: 'random' , component : RandomGameComponent, pathMatch: "full"}, 
-  {path: 'list' , component : GamesListComponent, pathMatch: "full"},
+  {path: 'home' , component : HomeComponent, pathMatch: "full",canActivate: [AuthGuard]},
+  {path: 'product' , component : ProductPageComponent, pathMatch: "full",canActivate: [AuthGuard]},
+  {path: 'random' , component : RandomGameComponent, pathMatch: "full",canActivate: [AuthGuard]}, 
+  {path: 'list' , component : GamesListComponent, pathMatch: "full",canActivate: [AuthGuard]},
   {path: 'register' , component : RegisterComponent, pathMatch: "full"},
   {path: 'login' , component : LoginComponent, pathMatch: "full"},
-  {path: 'loadgames' , component : LoadgamesComponent, pathMatch: "full"},
-  {path: 'gamedetails' , component : GameDetailsComponent, pathMatch: "full"}, 
-  {path: 'adminhome' , component : AdminHomeComponent, pathMatch: "full"}
+  {path: 'loadgames' , component : LoadgamesComponent, pathMatch: "full",canActivate: [AuthGuard]},
+  {path: 'gamedetails' , component : GameDetailsComponent, pathMatch: "full",canActivate: [AuthGuard]}, 
+  {path: 'adminhome' , component : AdminHomeComponent, pathMatch: "full",canActivate: [AuthGuard]}
 ];
 
 @NgModule({
