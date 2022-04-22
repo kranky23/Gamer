@@ -1,4 +1,4 @@
-import { ListOfGames } from "./list-of-games";
+import { ListOfGames } from "./services/list-of-games";
 
 export class GamesList {
 

@@ -13,10 +13,13 @@ export class GetAppListService {
 
   public gameList()
   {
-    return this.http.get<any>(`${this.baseUrl}/games`,{
-            headers: {
-                'Content-Type': 'application/json'
-            },})
+    let token = localStorage.getItem("token");
+    // let header = new HttpHeaders(
+    //   {
+    //   Authorization : "Bearer " + token
+    //   }
+    // )
+    return this.http.get<any>(`${this.baseUrl}/games` )
   }
 
   public newRelease(appid:number)
@@ -27,9 +30,18 @@ export class GetAppListService {
       },})
   }
 
-  public getGameDetails(appid:any)
+  public getGameDetails(appid:number)
   {
     return this.http.get(`${this.baseUrl}/newReleaseGames/${appid}`,{
+      headers: {
+          'Content-Type': 'application/json'
+      },})
+  }
+
+
+  public getMyGameDetailsByGenre(genre:String)
+  {
+    return this.http.get(`${this.baseUrl}/games/genre/${genre}`,{
       headers: {
           'Content-Type': 'application/json'
       },})

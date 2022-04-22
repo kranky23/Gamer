@@ -1,5 +1,9 @@
 @import 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet';
 
+.vl {
+	border-left: 6px solid rgb(43, 154, 43);
+	height: 60px;
+  }
 :host {
 	--dk-gray-100: #F3F4F6;
 	--dk-gray-200: #E5E7EB;

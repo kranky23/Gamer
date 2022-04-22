@@ -14,10 +14,6 @@
       </div>
     </div>
   
-    <div class="search position-relative text-center px-4 py-3 mt-2">
-      <input type="text" class="form-control w-100 border-0 bg-transparent" placeholder="Search here">
-      <i class="fa fa-search position-absolute d-block fs-6"></i>
-    </div>
   
     <ul class="categories list-unstyled">
       <li class="uil-folder">
@@ -26,7 +22,10 @@
       <li class="">
         <i class="uil-folder"></i><a href="random"> Game Randomizer</a>
       </li>
-      <li class="has-dropdown">
+      <li class="">
+        <i class="uil-folder"></i><a href="list"> Games List</a>
+      </li>
+      <!-- <li class="has-dropdown">
         <i class="uil-calendar-alt"></i><a href="#"> Calender</a>
         <ul class="sidebar-dropdown list-unstyled">
           <li><a href="#">Lorem ipsum</a></li>
@@ -98,60 +97,54 @@
       </li>
       <li class="">
         <i class="uil-map-marker"></i><a href="#"> Maps</a>
-      </li>
+      </li> -->
     </ul>
   </aside>
   
   <section id="wrapper">
     <nav class="navbar navbar-expand-md">
       <div class="container-fluid mx-2">
-        <div class="navbar-header">
+        <!-- <div class="navbar-header">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#toggle-navbar" aria-controls="toggle-navbar" aria-expanded="false" aria-label="Toggle navigation">
             <i class="uil-bars text-white"></i>
           </button>
           <a class="navbar-brand" href="#">admin<span class="main-color">kit</span></a>
-        </div>
+        </div> -->
         <div class="collapse navbar-collapse" id="toggle-navbar">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Settings
+
+            <li class="nav-item">
+              <a class="nav-link" href="#"> Profile
+                <img src="https://img.icons8.com/ios-glyphs/30/26e07f/user-male-circle.png"/>
+                <i class="uil-bell"></i>
               </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li>
-                  <a class="dropdown-item" href="#">My account</a>
-                </li>
-                <li><a class="dropdown-item" href="#">My inbox</a>
-                </li>
-                <li><a class="dropdown-item" href="#">Help</a>
-                </li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Log out</a></li>
-              </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><i class="uil-comments-alt"></i><span>23</span></a>
+              <a type="button" class="nav-link" (click)="logOutUser()">Logout
+                <img src="https://img.icons8.com/external-tal-revivo-green-tal-revivo/30/000000/external-online-account-logout-with-arrow-direction-mark-login-green-tal-revivo.png"/>
+                <i class="uil-comments-alt"></i>
+              </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><i class="uil-bell"></i><span>98</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
+            <!-- <div class="vl"></div> -->
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#">fasdfs
                 <i data-show="show-side-navigation1" class="uil-bars show-side-btn"></i>
               </a>
-            </li>
+            </li> -->
+
           </ul>
         </div>
       </div>
     </nav>
   
-    <div class="p-4">
+    <!-- <div class="p-4">
       <div class="welcome">
         <div class="content rounded-3 p-3">
           <h1 class="fs-3">Welcome to Dashboard</h1>
           <p class="mb-0">Hello Jone Doe, welcome to your awesome dashboard!</p>
         </div>
       </div>
-    </div>
+    </div> -->
+    
   </section>
   

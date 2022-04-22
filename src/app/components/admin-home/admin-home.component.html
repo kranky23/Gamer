@@ -1,0 +1,83 @@
+
+<html>
+    <body>
+      <div class="container crud-table">
+        <div class="clearfix">
+
+          <div class="form-inline pull-right">
+            <button type="button" class="btn btn-warning" (click)="logOutUser()">
+              <span class="glyphicon glyphicon-plus"> </span>
+              Logout
+            </button>
+          </div>
+
+          <div class="form-inline pull-left">
+            <button type="button" class="btn btn-success" (click)="addUser()"><span class="glyphicon glyphicon-plus"> </span>Add gamer</button>
+          </div>
+          
+        </div>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th >Username</th>
+              <th >Email</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody class="text-center" *ngIf = "this.dataLoaded">
+            <tr *ngFor="let gamer of gamers">
+              <td>{{ gamer.id }}</td>
+              <td>{{ gamer.username }}</td>
+              <td>{{ gamer.email }}</td>
+              <td>
+                <!-- <button class="btn btn-primary" (click)="editUser(gamer)">Edit</button> -->
+              </td>
+              <td> 
+                <button class="btn btn-danger" (click)="deleteUser(gamer)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+
+        <div class = "container-fluid mb-5" *ngIf="addGamer">
+            <h3> gamer add Form</h3>
+            <form #gamerAdd="ngForm" (ngSubmit)="onAdd(gamerAdd)" >
+
+    
+
+        <pre>{{ gamer | json }}</pre>
+        
+        
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" [(ngModel)]="gamer.email" id="floatingInput" placeholder="name@example.com" name="email">
+                    <label for="floatingInput">Email address</label>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" [(ngModel)]="gamer.username" id="floatingInput" placeholder="name@example.com" name="email">
+                    <label for="floatingInput">Username</label>
+                  </div>
+        
+                  <div class="form-floating mb-3">
+                    <input type="password" class="form-control" [(ngModel)]="gamer.password" id="floatingPassword" placeholder="Password" name="password">
+                    <label for="floatingPassword">Password</label>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <input type="password" class="form-control" [(ngModel)]="gamer.repassword" id="floatingPassword" placeholder="Re-Enter password" name="repassword">
+                    <label for="floatingPassword">Re-Enter Password</label>
+                  </div>
+        
+                    <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Add Gamer</button>
+                  </div>
+            </form>
+        </div>
+
+
+      </div>
+    </body>
+  </html>
