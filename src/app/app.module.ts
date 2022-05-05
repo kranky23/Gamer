@@ -18,7 +18,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AdminHomeComponent } from './components/admin-home/admin-home.component';
 import { LoginService } from './services/login.service';
 import { AuthGuard } from './services/auth.guard';
-import { AuthInterceptor } from './services/auth.interceptor';
+// import { AuthInterceptor } from './services/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -41,7 +41,8 @@ import { AuthInterceptor } from './services/auth.interceptor';
     FormsModule,
     Ng2SearchPipeModule
   ],
-  providers: [LoginService, AuthGuard, [{provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor,multi:true}]],
+  // , [{provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor,multi:true}]
+  providers: [LoginService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -169,3 +169,17 @@ html {
     bottom: 100%;
   }
 }
+
+.info
+{
+  color:white;
+}
+
+a{
+  color:lawngreen;
+  text-decoration: none;
+}
+
+a:hover{
+  color:#03e9f4
+}

@@ -232,3 +232,17 @@ html {
     font-size: 18px;
     margin-bottom: 8px;
   }
+
+  .info
+  {
+    color:white;
+  }
+
+  a{
+    color:lawngreen;
+    text-decoration: none;
+  }
+  
+  a:hover{
+    color:#03e9f4
+  }

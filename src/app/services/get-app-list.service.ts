@@ -9,42 +9,62 @@ export class GetAppListService {
   constructor(private http: HttpClient) { }
 
 
-  baseUrl = "http://localhost:8080"
+  baseUrl = "http://localhost:8090"
 
   public gameList()
   {
     let token = localStorage.getItem("token");
-    // let header = new HttpHeaders(
-    //   {
-    //   Authorization : "Bearer " + token
-    //   }
-    // )
-    return this.http.get<any>(`${this.baseUrl}/games` )
+    let header = new HttpHeaders(
+      {
+      Authorization : "Bearer " + token
+      }
+    )
+    return this.http.get<any>(`${this.baseUrl}/games`,{headers:header,responseType:'json'} )
   }
 
   public newRelease(appid:number)
   {
-    return this.http.get(`${this.baseUrl}/newReleaseGames/${appid}`,{
-      headers: {
-          'Content-Type': 'application/json'
-      },})
+    let token = localStorage.getItem("token");
+    let header = new HttpHeaders(
+      {
+      Authorization : "Bearer " + token
+      }
+    )
+    return this.http.get(`${this.baseUrl}/newReleaseGames/${appid}`,{headers:header,responseType:'json'})
+  }
+
+  public newReleases()
+  {
+    let token = localStorage.getItem("token");
+    let header = new HttpHeaders(
+      {
+      Authorization : "Bearer " + token
+      }
+    )
+    return this.http.get(`${this.baseUrl}/newReleaseGamesFromMyDatabase`,{headers:header,responseType:'json'})
   }
 
   public getGameDetails(appid:number)
   {
-    return this.http.get(`${this.baseUrl}/newReleaseGames/${appid}`,{
-      headers: {
-          'Content-Type': 'application/json'
-      },})
+    let token = localStorage.getItem("token");
+    let header = new HttpHeaders(
+      {
+      Authorization : "Bearer " + token
+      }
+    )
+    return this.http.get(`${this.baseUrl}/newReleaseGames/${appid}`,{headers:header,responseType:'json'})
   }
 
 
   public getMyGameDetailsByGenre(genre:String)
   {
-    return this.http.get(`${this.baseUrl}/games/genre/${genre}`,{
-      headers: {
-          'Content-Type': 'application/json'
-      },})
+    let token = localStorage.getItem("token");
+    let header = new HttpHeaders(
+      {
+      Authorization : "Bearer " + token
+      }
+    )
+    return this.http.get(`${this.baseUrl}/games/genre/${genre}`,{headers:header,responseType:'json'})
   }
 
 }
@@ -53,7 +73,7 @@ export class GetAppListService {
 
 //   constructor(private http: HttpClient) { }
 
-//   getQuestionsUrl = "http://localhost:8080";
+//   getQuestionsUrl = "http://localhost:8090";
 
 //   public getQuestions(sec_id: Number)
 //   {

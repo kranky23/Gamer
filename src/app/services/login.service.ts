@@ -12,7 +12,7 @@ export class LoginService {
   constructor(private router: Router,private http : HttpClient) { }
 
 
-  url = "http://localhost:8080"
+  url = "http://localhost:8090"
 
   generateToken(gamer:Gamer)
   {

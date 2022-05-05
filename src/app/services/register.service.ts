@@ -7,7 +7,7 @@ import { Gamer } from '../gamer';
 })
 export class RegisterService {
 
-  registrationUrl = 'http://localhost:8080/register';
+  registrationUrl = 'http://localhost:8090/register';
 
   constructor(private http: HttpClient) { }
 

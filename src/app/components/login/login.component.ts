@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
           (data: any) => {
             this.loginUser(data.token);
             console.log('Gamer login Success!', data);
+            localStorage.setItem("username",data.username);
             window.location.href = "home"
 
           },

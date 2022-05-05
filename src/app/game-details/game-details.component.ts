@@ -34,7 +34,7 @@ export class GameDetailsComponent implements OnInit {
         console.log("AppIDs are ",this.appIds)
     
       },
-      (error:any) => {console.log('Error obtaining games!',error)}
+      (error:any) => {console.log('Error obtaining games on sample testing page.. starting lo test chesina page idhi!',error)}
     )
 
       // end of loading the game ids. now start to store the game data.

@@ -104,3 +104,11 @@ h1 {
 .rwd-table th, .rwd-table td:before {
   color: #dd5;
 }
+
+.search
+{
+  border: 5px solid blueviolet;
+  margin-left: 30%;
+  /* text-align: center;
+  float: center;; */
+}

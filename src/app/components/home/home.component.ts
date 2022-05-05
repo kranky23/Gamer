@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
         console.log("AppIDs are ",this.appIds)
     
       },
-      (error:any) => {console.log('Error obtaining games!',error)}
+      (error:any) => {console.log('Error obtaining games on home page!',error)}
     )
 
     // this.getNewReleasedGames();
@@ -78,62 +78,77 @@ export class HomeComponent implements OnInit {
   {
     let index = 0;
 
-    console.log("array values are ",this.appIds)
-    for(let i=310;i<320;i++)
+    const res : any =await this.getAppListService.newReleases().toPromise();
+
+    console.log("obtained newly released games from my database is ",res);
+    console.log(res[0])
+    for(let i=0;i<30;i++)
     {
-      const res : any =await this.getAppListService.newRelease(this.appIds[i]).toPromise();
-      var id = this.appIds[i];
-      console.log("new code output is " ,res[id]," i value is ",i);
+      // this.newReleases[i] = res[i];
+      const data : any =await this.getAppListService.newRelease(res[i].steamid).toPromise();
+      console.log("release game data is ",data);
+      this.newReleases[i] = data[res[i].steamid];
+    }
 
-      // this.newReleases[i] = res[id].success;
 
-      if(res[id].success===true)
-      {
-        console.log("game is valid")
-        if(res[id].data.release_date.coming_soon==true)
-        {
-          this.released = true;
 
-          console.log("Newly released game is ", res[id].data.name);
-          this.newReleases[index] = res[id];
-          console.log("index value is ",index);
-          index++;
-        }
-      }  
 
-      // console.log("i value is " , this.appIds[i]);
-      // this.getAppListService.newRelease(this.appIds[i]).subscribe(
-      //    (data:any) => {
-      //     // await this.delay(1000);
+    // console.log("array values are ",this.appIds)
+    // for(let i=310;i<320;i++)
+    // {
+    //   const res : any =await this.getAppListService.newRelease(this.appIds[i]).toPromise();
+    //   var id = this.appIds[i];
+    //   console.log("new code output is " ,res[id]," i value is ",i);
 
-      //     this.responses[i] = data;
-      //     // console.log("i value is ",i)
+    //   // this.newReleases[i] = res[id].success;
+
+    //   if(res[id].success===true)
+    //   {
+    //     console.log("game is valid")
+    //     if(res[id].data.release_date.coming_soon==true)
+    //     {
+    //       this.released = true;
+
+    //       console.log("Newly released game is ", res[id].data.name);
+    //       this.newReleases[index] = res[id];
+    //       console.log("index value is ",index);
+    //       index++;
+    //     }
+    //   }  
+
+    //   // console.log("i value is " , this.appIds[i]);
+    //   // this.getAppListService.newRelease(this.appIds[i]).subscribe(
+    //   //    (data:any) => {
+    //   //     // await this.delay(1000);
+
+    //   //     this.responses[i] = data;
+    //   //     // console.log("i value is ",i)
           
           
-      //     console.log(data)
-      //     if(data[id].success===true)
-      //     {
-      //       console.log("game is valid")
-      //       if(data[id].data.release_date.coming_soon==true)
-      //       {
-      //         console.log("Newly released game is ", data[id].data.name);
-      //         this.newReleases[index] = data;
-      //         console.log("index value is ",index);
-      //         index++;
-      //       }
-      //     }  
-      //   },
-      //   (error:any) => {
-      //     console.log('Error obtaining game details!',error)
-      //   }
-      // )
+    //   //     console.log(data)
+    //   //     if(data[id].success===true)
+    //   //     {
+    //   //       console.log("game is valid")
+    //   //       if(data[id].data.release_date.coming_soon==true)
+    //   //       {
+    //   //         console.log("Newly released game is ", data[id].data.name);
+    //   //         this.newReleases[index] = data;
+    //   //         console.log("index value is ",index);
+    //   //         index++;
+    //   //       }
+    //   //     }  
+    //   //   },
+    //   //   (error:any) => {
+    //   //     console.log('Error obtaining game details!',error)
+    //   //   }
+    //   // )
         
-    }
-    if(index==0)
-    {
-      alert("No new releases!")
-    }
-    this.callThisMethod();
+    // }
+    // if(index==0)
+    // {
+    //   alert("No new releases!")
+    // }
+    // this.callThisMethod();
     // this.released = true;
 
     // console.log(this.responses.length)

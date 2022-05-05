@@ -22,7 +22,6 @@
               <th>ID</th>
               <th >Username</th>
               <th >Email</th>
-              <th>Edit</th>
               <th>Delete</th>
             </tr>
           </thead>
@@ -31,9 +30,9 @@
               <td>{{ gamer.id }}</td>
               <td>{{ gamer.username }}</td>
               <td>{{ gamer.email }}</td>
-              <td>
+              <!-- <td> -->
                 <!-- <button class="btn btn-primary" (click)="editUser(gamer)">Edit</button> -->
-              </td>
+              <!-- </td> -->
               <td> 
                 <button class="btn btn-danger" (click)="deleteUser(gamer)">Delete</button>
               </td>
@@ -43,12 +42,12 @@
 
 
         <div class = "container-fluid mb-5" *ngIf="addGamer">
-            <h3> gamer add Form</h3>
+            <h3> Gamer add Form</h3>
             <form #gamerAdd="ngForm" (ngSubmit)="onAdd(gamerAdd)" >
 
     
 
-        <pre>{{ gamer | json }}</pre>
+        <!-- <pre>{{ gamer | json }}</pre> -->
         
         
                 <div class="form-floating mb-3">

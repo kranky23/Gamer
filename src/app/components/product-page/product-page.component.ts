@@ -132,7 +132,7 @@ export class ProductPageComponent implements OnInit {
     console.log(postedComment.comment.length);
     if(postedComment.comment.length < 10)
     {
-      alert("Review must be of minimum 20 characters!");
+      alert("Review must be of minimum 10 characters!");
       postedComment.comment = "";
     }
 

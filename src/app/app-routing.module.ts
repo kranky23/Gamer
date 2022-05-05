@@ -22,7 +22,8 @@ const routes: Routes = [
   {path: 'login' , component : LoginComponent, pathMatch: "full"},
   {path: 'loadgames' , component : LoadgamesComponent, pathMatch: "full",canActivate: [AuthGuard]},
   {path: 'gamedetails' , component : GameDetailsComponent, pathMatch: "full",canActivate: [AuthGuard]}, 
-  {path: 'adminhome' , component : AdminHomeComponent, pathMatch: "full",canActivate: [AuthGuard]}
+  {path: 'adminhome' , component : AdminHomeComponent, pathMatch: "full",canActivate: [AuthGuard]},
+  {path: '' , component : LoginComponent, pathMatch: "full",canActivate: [AuthGuard]}
 ];
 
 @NgModule({

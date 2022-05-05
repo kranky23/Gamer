@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 <section class = "wrapper">
-    <nav class="flex-nav">
+    <!-- <nav class="flex-nav">
         <div class="container">
         <div class="grid menu">
             <div class="column-xs-4 column-md-6">
@@ -11,7 +11,7 @@
             </div>
         </div>
         </div>
-    </nav>
+    </nav> -->
     <main>
     <div class="container">
        
@@ -100,16 +100,20 @@
           <div class="container inside">
             <div class="left">
               <textarea class="comment" type="text" placeholder="Write a comment..." [(ngModel)]="postedComment.comment"></textarea>
-              <button class="button insert" type="button" (click)="onSubmit(postedComment)">Insert a comment</button>
+              <button class="button insert" type="button" [disabled]="!postedComment.comment" (click)="onSubmit(postedComment)">Insert a comment</button>
             </div>
             <div class="comment-section">
               <h1 class="heading">COMMENTS:</h1>
               <div class="theSection" *ngFor="let comment of comments">
                   <img class="icon" src="https://thesocietypages.org/socimages/files/2009/05/nopic_192.gif"/>
-                  <span class="commented">{{comment.localDateTime}}<br>{{comment.comment}}</span>
-                  <img src="https://img.icons8.com/plasticine/50/000000/filled-trash.png"/>
+                  <span class="commented">posted on {{comment.localDateTime.substring(0,10)}} at 
+                      {{comment.localDateTime.substring(11,19)}} <br>{{comment.username}} : {{comment.comment}}</span>
+                  <!-- <img src="https://img.icons8.com/plasticine/50/000000/filled-trash.png"/> -->
                 </div>
-              <div class="theSection"><img class="icon" src="https://thesocietypages.org/socimages/files/2009/05/nopic_192.gif"/><span class="commented">This is a sample comment</span></div>
+              <!-- <div class="theSection">
+                  <img class="icon" src="https://thesocietypages.org/socimages/files/2009/05/nopic_192.gif"/>
+                  <span class="commented">This is a sample comment</span>
+                </div> -->
             </div>
           </div>
         </div>

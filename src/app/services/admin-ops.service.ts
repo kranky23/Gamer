@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Gamer } from '../gamer';
 
@@ -10,22 +10,28 @@ export class AdminOpsService {
   constructor(private http: HttpClient) { }
 
 
-  baseUrl = "http://localhost:8080"
+  baseUrl = "http://localhost:8090"
 
   public getGamers()
   {
-    return this.http.get<any>(`${this.baseUrl}/getGamers`,{
-            headers: {
-                'Content-Type': 'application/json'
-            },})
+    let token = localStorage.getItem("token");
+    let header = new HttpHeaders(
+      {
+      Authorization : "Bearer " + token
+      }
+    )
+    return this.http.get<any>(`${this.baseUrl}/getGamers`,{headers:header,responseType:'json'} )
   }
 
   public deleteGamer(email:string)
   {
-    return this.http.delete<any>(`${this.baseUrl}/deleteGamer/${email}`,{
-      headers: {
-          'Content-Type': 'application/json'
-      },})
+    let token = localStorage.getItem("token");
+    let header = new HttpHeaders(
+      {
+      Authorization : "Bearer " + token
+      }
+    )
+    return this.http.delete<any>(`${this.baseUrl}/deleteGamer/${email}`,{headers:header,responseType:'json'} )
   }
 
 
