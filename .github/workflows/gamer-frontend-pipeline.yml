@@ -14,7 +14,6 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
-      
     - name: Build & push Docker image
       with:
         image: kranky23/gamerfrontend
