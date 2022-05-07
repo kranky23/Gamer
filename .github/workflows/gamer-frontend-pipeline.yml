@@ -12,9 +12,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v3
     - name: Build & push Docker image
+      uses: mr-smithers-excellent/docker-build-push@v5
       with:
         image: kranky23/gamerfrontend
         tags: latest
