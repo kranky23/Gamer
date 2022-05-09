@@ -27,7 +27,7 @@ export class LoadgamesComponent implements OnInit {
     const data : any = await this.getAppListService.gameList().toPromise();
  
 
-        for(var i=0;i<139715;i++)
+        for(var i=0;i<141794;i++)
         {
           this.appIds[i] = data[0].applist.apps[i].appid;
           this.appNames[i] = data[0].applist.apps[i].name;

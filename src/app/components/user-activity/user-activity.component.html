@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+<section class="wrapper">
+    <div class="buttons-container" style="padding-left:40%">
+        <a type="button" class="flooper-btn" (click)="getGamerComments();">View My Activity</a>
+    </div>
+    <div>
+        <h1>Gamer Activity</h1>
+        <div class="main-container">
+            <div class="card purple border" *ngFor="let activity of activities;index as i">
+                
+                <h2>{{gameNames[i]}}</h2>
+                <p> {{activity.comment}}</p> <br> <p class="bold">posted on {{activity.localDateTime.substring(0,10)}} at 
+                {{activity.localDateTime.substring(11,19)}}</p>
+            
+            </div>
+
+            <!-- <div class="card yellow">
+                <h2>{{gameNames[0]}}</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt optio laborum vitae eveniet suscipit repellat sit possimus iusto veritatis earum qui excepturi ullam provident quas, dolorum libero dolor cumque aperiam?</p>
+            </div>
+            <div class="card green">
+                <h2>Card Heading Title</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt optio laborum vitae eveniet suscipit repellat sit possimus iusto veritatis earum qui excepturi ullam provident quas, dolorum libero dolor cumque aperiam?</p>
+            </div>
+            <div class="card purple border">
+                <h2>Card Heading Title</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt optio laborum vitae eveniet suscipit repellat sit possimus iusto veritatis earum qui excepturi ullam provident quas, dolorum libero dolor cumque aperiam?</p>
+            </div>
+            <div class="card yellow border">
+                <h2>Card Heading Title</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt optio laborum vitae eveniet suscipit repellat sit possimus iusto veritatis earum qui excepturi ullam provident quas, dolorum libero dolor cumque aperiam?</p>
+            </div>
+            <div class="card green border">
+                <h2>Card Heading Title</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt optio laborum vitae eveniet suscipit repellat sit possimus iusto veritatis earum qui excepturi ullam provident quas, dolorum libero dolor cumque aperiam?</p>
+            </div> -->
+        </div>
+    </div>
+</section>
+    

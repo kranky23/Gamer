@@ -8,6 +8,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import { RandomGameComponent } from './components/random-game/random-game.component';
 import { RegisterComponent } from './components/register/register.component';
+import { UserActivityComponent } from './components/user-activity/user-activity.component';
 import { GameDetailsComponent } from './game-details/game-details.component';
 import { AuthGuard } from './services/auth.guard';
 
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path: 'loadgames' , component : LoadgamesComponent, pathMatch: "full",canActivate: [AuthGuard]},
   {path: 'gamedetails' , component : GameDetailsComponent, pathMatch: "full",canActivate: [AuthGuard]}, 
   {path: 'adminhome' , component : AdminHomeComponent, pathMatch: "full",canActivate: [AuthGuard]},
+  {path: 'activity' , component : UserActivityComponent, pathMatch: "full",canActivate: [AuthGuard]},
   {path: '' , component : LoginComponent, pathMatch: "full",canActivate: [AuthGuard]}
 ];
 

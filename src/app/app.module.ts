@@ -18,6 +18,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AdminHomeComponent } from './components/admin-home/admin-home.component';
 import { LoginService } from './services/login.service';
 import { AuthGuard } from './services/auth.guard';
+import { UserActivityComponent } from './components/user-activity/user-activity.component';
 // import { AuthInterceptor } from './services/auth.interceptor';
 
 @NgModule({
@@ -32,7 +33,8 @@ import { AuthGuard } from './services/auth.guard';
     RegisterComponent,
     LoginComponent,
     LoadgamesComponent,
-    AdminHomeComponent
+    AdminHomeComponent,
+    UserActivityComponent
   ],
   imports: [
     BrowserModule,

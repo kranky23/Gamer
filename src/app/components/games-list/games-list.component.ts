@@ -36,7 +36,7 @@ export class GamesListComponent implements OnInit {
     // let map = new Map<string, number>(); 
     const res : any =await this.getAppListService.gameList().toPromise();
     // console.log(res);
-    for(var i=0;i<139715;i++)
+    for(var i=0;i<141794;i++)
     {
       this.appNames[i] = res[0].applist.apps[i].name;
       this.appIds[i] = res[0].applist.apps[i].appid;
@@ -89,7 +89,7 @@ export class GamesListComponent implements OnInit {
     this.alphabetGames = [];
     var index = 0;
 
-    for(var i=0;i<139715;i++)
+    for(var i=0;i<141794;i++)
     {
       if(this.appNames[i].charAt(0)===value.charAt(0))
       {

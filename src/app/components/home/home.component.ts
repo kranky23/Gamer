@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     // const res : any = await this.getAppListService.gameList().toPromise();
-    // for(var i=0;i<139715;i++)
+    // for(var i=0;i<141794;i++)
     // {
     //   this.appIds[i] = res[0].applist.apps[i].appid
     // }
@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
         console.log('THe obtained list of questions is ',data)
         console.log(data[0].applist.apps[1].name)
 
-        for(var i=0;i<139715;i++)
+        for(var i=0;i<141794;i++)
         {
           this.appIds[i] = data[0].applist.apps[i].appid
         }
@@ -53,7 +53,7 @@ export class HomeComponent implements OnInit {
         console.log('THe obtained list of games is ',data)
         console.log(data[0].applist.apps[1].name)
 
-        for(var i=0;i<139715;i++)
+        for(var i=0;i<141794;i++)
         {
           this.appIds[i] = data[0].applist.apps[i].appid
         }

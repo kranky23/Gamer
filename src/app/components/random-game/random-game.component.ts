@@ -30,7 +30,7 @@ export class RandomGameComponent implements OnInit {
         console.log('THe obtained list of questions is ',data)
         console.log(data[0].applist.apps[1].name)
 
-        for(var i=0;i<139715;i++)
+        for(var i=0;i<141794;i++)
         {
           this.appIds[i] = data[0].applist.apps[i].appid
         }
@@ -56,7 +56,7 @@ export class RandomGameComponent implements OnInit {
     
     while(!found)
     {
-      let appid = this.randomNumber(10,139714);
+      let appid = this.randomNumber(10,141794);
       const data : any = await this.getAppListService.getGameDetails(this.appIds[appid]).toPromise();
       var index = this.appIds[appid];
       console.log("data is ", data[this.appIds[appid]].success);

@@ -40,4 +40,17 @@ export class CommentOpsService {
     //       'Content-Type': 'application/json'
     //   },},postedComment)
   }
+
+  getUserComments()
+  {
+    let username = localStorage.getItem("username");
+    let token = localStorage.getItem("token");
+    let header = new HttpHeaders(
+      {
+      Authorization : "Bearer " + token
+      }
+    )
+    let appid = localStorage.getItem("appid");
+    return this.http.get<any>(`${this.baseUrl}/getCommentsOfGamer/${username}`,{headers:header,responseType:'json'} )
+  }
 }

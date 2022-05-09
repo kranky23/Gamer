@@ -25,7 +25,7 @@ export class GameDetailsComponent implements OnInit {
         console.log('THe obtained list of questions is ',data)
         console.log(data[0].applist.apps[1].name)
 
-        for(var i=0;i<139715;i++)
+        for(var i=0;i<141794;i++)
         {
           this.appIds[i] = data[0].applist.apps[i].appid;
           this.appNames[i] = data[0].applist.apps[i].name;
@@ -52,7 +52,7 @@ export class GameDetailsComponent implements OnInit {
         console.log('THe obtained list of games is ',data)
         console.log(data[0].applist.apps[1].name)
 
-        for(var i=0;i<139715;i++)
+        for(var i=0;i<141794;i++)
         {
           this.appIds[i] = data[0].applist.apps[i].appid
         }
