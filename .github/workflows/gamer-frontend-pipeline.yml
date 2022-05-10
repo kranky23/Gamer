@@ -24,4 +24,4 @@ jobs:
         password: ${{ secrets.DOCKER_PWD }}
 
     - name: Run unit tests
-      run: npm run ci:test
+      run: ng test
