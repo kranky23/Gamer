@@ -24,4 +24,4 @@ jobs:
         password: ${{ secrets.DOCKER_PWD }}
 
     - name: Run unit tests
-      run: npm test
+      run: npm test --watch=false --browsers=ChromeHeadless
