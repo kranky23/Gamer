@@ -23,5 +23,5 @@ jobs:
         username: kranky23
         password: ${{ secrets.DOCKER_PWD }}
 
-    -name: Run unit tests
-     run: npm run ci:test
+    - name: Run unit tests
+      run: npm run ci:test
