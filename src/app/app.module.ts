@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GameDetailsComponent } from './game-details/game-details.component';
@@ -20,6 +20,9 @@ import { LoginService } from './services/login.service';
 import { AuthGuard } from './services/auth.guard';
 import { UserActivityComponent } from './components/user-activity/user-activity.component';
 // import { AuthInterceptor } from './services/auth.interceptor';
+
+import { RouterModule, Routes } from '@angular/router';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,10 @@ import { UserActivityComponent } from './components/user-activity/user-activity.
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    RouterModule.forRoot([]),
+    HttpClient,
+    HttpClientTestingModule
   ],
   // , [{provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor,multi:true}]
   providers: [LoginService, AuthGuard],

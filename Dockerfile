@@ -2,4 +2,5 @@ FROM node:alpine
 WORKDIR /app 
 COPY ./ ./
 RUN npm i
-CMD ["npm", "run", "start"]
+# CMD ["ng"]
+CMD ["npm", "run", "build","--prod"]
