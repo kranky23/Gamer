@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Gamer } from '../gamer';
@@ -16,6 +17,7 @@ export class LoginService {
 
   generateToken(gamer:Gamer)
   {
+    console.log("service method called")
     return this.http.post(`${this.url}/token`,gamer);
   }
 

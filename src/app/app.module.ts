@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient} from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GameDetailsComponent } from './game-details/game-details.component';
@@ -41,13 +41,13 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
+    AppRoutingModule,
     FormsModule,
     Ng2SearchPipeModule,
     RouterModule.forRoot([]),
-    HttpClient,
-    HttpClientTestingModule
+    HttpClientTestingModule,
+    HttpClient
   ],
   // , [{provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor,multi:true}]
   providers: [LoginService, AuthGuard],

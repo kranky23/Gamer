@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Gamer } from 'src/app/gamer';
 import { LoginService } from 'src/app/services/login.service';
 
@@ -10,7 +11,7 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public loginService:LoginService) { }
+  constructor(public loginService:LoginService,private router:Router) { }
   
   gamer: Gamer = new Gamer();
 
@@ -30,6 +31,7 @@ export class LoginComponent implements OnInit {
             this.loginUser(data.token);
             console.log('Gamer login Success!', data);
             localStorage.setItem("username",data.username);
+            this.router.navigate(['home'])
             window.location.href = "home"
 
           },
