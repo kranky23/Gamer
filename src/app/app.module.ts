@@ -20,6 +20,7 @@ import { LoginService } from './services/login.service';
 import { AuthGuard } from './services/auth.guard';
 import { UserActivityComponent } from './components/user-activity/user-activity.component';
 // import { AuthInterceptor } from './services/auth.interceptor';
+import { RouterModule, Routes } from '@angular/router';
 
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
@@ -45,9 +46,13 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
     AppRoutingModule,
     FormsModule,
     Ng2SearchPipeModule,
+<<<<<<< HEAD
     RouterModule.forRoot([]),
     HttpClientTestingModule,
     HttpClient
+=======
+    RouterModule.forRoot([])
+>>>>>>> tmp
   ],
   // , [{provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor,multi:true}]
   providers: [LoginService, AuthGuard],

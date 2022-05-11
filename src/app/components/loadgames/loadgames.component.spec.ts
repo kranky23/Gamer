@@ -10,7 +10,11 @@ describe('LoadgamesComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ LoadgamesComponent ],
+<<<<<<< HEAD
       imports: [ HttpClientTestingModule ]
+=======
+      imports : [HttpClientTestingModule]
+>>>>>>> tmp
     })
     .compileComponents();
   });

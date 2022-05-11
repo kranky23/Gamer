@@ -10,7 +10,11 @@ describe('AdminHomeComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ AdminHomeComponent ],
+<<<<<<< HEAD
       imports: [ HttpClientTestingModule ]
+=======
+      imports : [HttpClientTestingModule]
+>>>>>>> tmp
 
     })
     .compileComponents();

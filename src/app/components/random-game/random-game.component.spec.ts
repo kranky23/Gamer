@@ -10,7 +10,11 @@ describe('RandomGameComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ RandomGameComponent ],
+<<<<<<< HEAD
       imports: [ HttpClientTestingModule ]
+=======
+      imports : [HttpClientTestingModule]
+>>>>>>> tmp
 
     })
     .compileComponents();
