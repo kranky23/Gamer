@@ -20,6 +20,7 @@ import { LoginService } from './services/login.service';
 import { AuthGuard } from './services/auth.guard';
 import { UserActivityComponent } from './components/user-activity/user-activity.component';
 // import { AuthInterceptor } from './services/auth.interceptor';
+import { RouterModule, Routes } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { UserActivityComponent } from './components/user-activity/user-activity.
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    RouterModule.forRoot([])
   ],
   // , [{provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor,multi:true}]
   providers: [LoginService, AuthGuard],

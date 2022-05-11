@@ -13,6 +13,19 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    # Install the needed dependencies
+    - name: Install dependencies
+      run: npm ci
+
+    # Build the application
+    - name: Build
+      run: npm run build --prod
+
+    # Testing the application
+    - name: Test
+      run: npm run ci:test
+    
+    # Build and deploy the application to Docker Hub
     - name: Build & push Docker image
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
@@ -22,3 +35,6 @@ jobs:
         dockerfile: Dockerfile
         username: kranky23
         password: ${{ secrets.DOCKER_PWD }}
+
+    # - name: Run unit tests
+    #   run: npm run ci:test
