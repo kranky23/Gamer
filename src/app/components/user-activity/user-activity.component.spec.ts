@@ -10,12 +10,8 @@ describe('UserActivityComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ UserActivityComponent ],
-<<<<<<< HEAD
-      imports: [ HttpClientTestingModule ]
-=======
       imports : [HttpClientTestingModule]
 
->>>>>>> tmp
     })
     .compileComponents();
   });

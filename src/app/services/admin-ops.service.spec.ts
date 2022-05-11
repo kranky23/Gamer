@@ -8,11 +8,7 @@ describe('AdminOpsService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-<<<<<<< HEAD
-      imports: [HttpClientTestingModule]
-=======
       imports : [HttpClientTestingModule]
->>>>>>> tmp
 
     });
     service = TestBed.inject(AdminOpsService);

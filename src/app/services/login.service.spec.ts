@@ -12,11 +12,6 @@ describe('LoginService', () => {
       imports: [HttpClientTestingModule,RouterTestingModule]
 
     });
-<<<<<<< HEAD
-    service = TestBed.inject(LoginService);
-  });
-=======
->>>>>>> tmp
 
     expect(service).toBeTruthy();
   });
