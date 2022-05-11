@@ -12,9 +12,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Run unit tests
-      run: npm run ci:test
-      
     - uses: actions/checkout@v3
     - name: Build & push Docker image
       uses: mr-smithers-excellent/docker-build-push@v5
@@ -26,4 +23,5 @@ jobs:
         username: kranky23
         password: ${{ secrets.DOCKER_PWD }}
 
-    
+    - name: Run unit tests
+      run: npm run ci:test
