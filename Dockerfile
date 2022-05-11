@@ -2,5 +2,5 @@ FROM node:alpine
 WORKDIR /app 
 COPY ./ ./
 RUN npm i
-# CMD ["ng"]
+# RUN npm test
 CMD ["npm", "run", "build","--prod"]
